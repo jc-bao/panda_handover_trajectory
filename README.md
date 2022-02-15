@@ -1,7 +1,7 @@
 # panda_handover_trajectory
 
 ```
-self.trajectory = {
+trajectory = {
                 'obj_init_pos': task.get_achieved_goal(),
                 'goal': task.get_goal(),
                 'time': [0, 1/12, 2/12, ...],

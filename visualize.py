@@ -1,12 +1,21 @@
+from asyncio import protocols
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation 
+import pickle
 
-data = np.load('handover2.npy', allow_pickle = True)
-panda0_ee = data.item()['panda0_ee']
-panda1_ee = data.item()['panda1_ee']
-goal = data.item()['goal']
-obj_init = data.item()['obj_init_pos']
+# for file in ['handover1_1', 'handover1_2', \
+#     'handover1_re1_1', 'handover1_re1_2', 'handover1_re1_3', \
+#         'handover2']:
+#     data = np.load(f'{file}.npy', allow_pickle=True).item()
+#     with open(f'{file}.pkl', 'wb') as f:
+#         pickle.dump(data, f, protocol=2)
+with open('handover1_1.pkl', 'rb') as f:
+    data = pickle.load(f)
+panda0_ee = data['panda0_ee']
+panda1_ee = data['panda1_ee']
+goal = data['goal']
+obj_init = data['obj_init_pos']
 
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
