@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation 
 import pickle
 
-# for file in ['handover1_1', 'handover1_2', \
-#     'handover1_re1_1', 'handover1_re1_2', 'handover1_re1_3', \
-#         'handover2']:
+# for file in ['handover1_inhand_joint', 'handover1_joint']:
 #     data = np.load(f'{file}.npy', allow_pickle=True).item()
 #     with open(f'{file}.pkl', 'wb') as f:
 #         pickle.dump(data, f, protocol=2)
+# exit()
+
 with open('handover1_1.pkl', 'rb') as f:
     data = pickle.load(f)
 panda0_ee = data['panda0_ee']
