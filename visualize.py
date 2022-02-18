@@ -10,9 +10,9 @@ import pickle
 #         pickle.dump(data, f, protocol=2)
 # exit()
 
-with open('4.pkl', 'rb') as f:
+with open('/Users/reedpan/Downloads/trajectory/handover1_rearrange1/1hand_1re.pkl', 'rb') as f:
     data = pickle.load(f)
-panda0_ee = data['panda0_joints']
+panda0_ee = data['panda0_ee']
 panda1_ee = data['panda1_ee']
 goal = data['goal']
 obj_init = data['obj_init_pos']
@@ -25,7 +25,7 @@ for o in obj_init.reshape(-1, 3):
     ax.scatter(*o)
 ax.scatter(*np.moveaxis(panda0_ee, 0, 1))
 ax.scatter(*np.moveaxis(panda1_ee, 0, 1))
-
+print(goal)
 graph0,  = ax.plot(*panda0_ee[0], "ro", markersize=8)
 graph1,  = ax.plot(*panda1_ee[0], "yo", markersize=8)
 
