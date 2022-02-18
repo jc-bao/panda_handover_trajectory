@@ -10,9 +10,9 @@ import pickle
 #         pickle.dump(data, f, protocol=2)
 # exit()
 
-with open('handover1_1.pkl', 'rb') as f:
+with open('4.pkl', 'rb') as f:
     data = pickle.load(f)
-panda0_ee = data['panda0_ee']
+panda0_ee = data['panda0_joints']
 panda1_ee = data['panda1_ee']
 goal = data['goal']
 obj_init = data['obj_init_pos']
